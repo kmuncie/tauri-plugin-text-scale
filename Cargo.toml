@@ -1,0 +1,19 @@
+[package]
+name = "tauri-plugin-text-scale"
+version = "0.1.0"
+description = "Operating system text size plugin for Tauri applications"
+license = "MIT"
+repository = "https://github.com/silvermine/tauri-plugin-text-scale"
+edition = "2024"
+rust-version = "1.94.0"
+links = "tauri-plugin-text-scale"
+exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules"]
+
+[dependencies]
+serde = { version = "1.0.228" }
+tauri = { version = "2.9.3" }
+thiserror = "2.0.17"
+tracing = { version = "0.1.41", default-features = false, features = ["std", "log"] }
+
+[build-dependencies]
+tauri-plugin = { version = "2.5.1", features = ["build"] }

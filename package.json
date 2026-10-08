@@ -14,7 +14,10 @@
       "commitlint": "commitlint --from ${COMMITLINT_FROM:-361a544} --to ${COMMITLINT_TO:-HEAD}",
       "eslint": "eslint .",
       "markdownlint": "markdownlint-cli2",
-      "standards": "npm run eslint && npm run markdownlint && npm run commitlint && npm run check-node-version"
+      "rust:lint": "cargo lint-clippy && cargo lint-fmt",
+      "rust:lint:fix": "cargo fix-clippy && cargo fix-fmt",
+      "standards": "npm run eslint && npm run markdownlint && npm run rust:lint && npm run commitlint && npm run check-node-version",
+      "test:rust": "cargo test --workspace --lib"
    },
    "author": "Jeremy Thomerson",
    "license": "MIT",
