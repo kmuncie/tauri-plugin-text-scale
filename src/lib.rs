@@ -80,3 +80,17 @@ pub fn init<R: Runtime>() -> TauriPlugin<R> {
       })
       .build()
 }
+
+#[cfg(test)]
+mod tests {
+   use super::*;
+
+   #[test]
+   fn the_event_name_matches_the_guest_js_bindings() {
+      let bindings = include_str!("../guest-js/index.ts");
+      let declaration =
+         format!("export const TEXT_SCALE_CHANGED_EVENT = '{TEXT_SCALE_CHANGED_EVENT}';");
+
+      assert!(bindings.contains(&declaration));
+   }
+}

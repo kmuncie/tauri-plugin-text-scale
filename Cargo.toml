@@ -7,7 +7,9 @@ repository = "https://github.com/silvermine/tauri-plugin-text-scale"
 edition = "2024"
 rust-version = "1.94.0"
 links = "tauri-plugin-text-scale"
-exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules"]
+# A Rust test reads `guest-js/index.ts` to check the event name, so the package keeps
+# that one file.
+exclude = ["/examples", "/dist-js", "/guest-js", "!/guest-js/index.ts", "/node_modules"]
 
 [dependencies]
 serde = { version = "1.0.228" }
