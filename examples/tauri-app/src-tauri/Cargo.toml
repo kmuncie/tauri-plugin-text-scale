@@ -1,0 +1,19 @@
+[package]
+name = "tauri-app"
+version = "0.1.0"
+description = "Text scale example app"
+edition = "2024"
+rust-version = "1.94.0"
+
+[lib]
+name = "tauri_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.5.6", features = [] }
+
+[dependencies]
+tauri = { version = "2.9.3", features = [] }
+tauri-plugin-text-scale = { path = "../../../" }
+tracing = { version = "0.1.41", features = ["release_max_level_warn"] }
+tracing-subscriber = { version = "=0.3.23", features = ["env-filter", "fmt"] }
