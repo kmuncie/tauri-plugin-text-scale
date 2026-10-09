@@ -169,6 +169,10 @@ With `fontScale` listed, Android reports a text size change to the running activ
 and the plugin emits the change event. Without it, Android restarts the activity
 instead, and the plugin emits no event.
 
+The Android WebView multiplies all text by the font scale on its own. The plugin sets
+the WebView's `textZoom` to `100` to turn that off, so that the app applies the scale
+once, where it chooses.
+
 ### API
 
 #### Read the text scale
