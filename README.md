@@ -153,6 +153,22 @@ Add the default permission to a capability for each window that reads the scale:
 `text-scale:default` allows the `get_text_scale` command. The change event needs no
 permission of its own, because `core:default` already allows listening to events.
 
+#### Android
+
+Add `fontScale` to the `android:configChanges` attribute of the app's main activity, in
+`src-tauri/gen/android/app/src/main/AndroidManifest.xml`. The Tauri template does not
+list it:
+
+```xml
+<activity
+   android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode|fontScale"
+   ...>
+```
+
+With `fontScale` listed, Android reports a text size change to the running activity,
+and the plugin emits the change event. Without it, Android restarts the activity
+instead, and the plugin emits no event.
+
 ### API
 
 #### Read the text scale
