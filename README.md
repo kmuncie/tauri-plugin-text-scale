@@ -91,6 +91,12 @@ cd android && ./gradlew :lib:test
 The Kotlin tests cover the logic in `android/lib`, which does not depend on the Tauri
 Android API, so the tests run without an emulator or a Tauri app build.
 
+### Manual Android testing
+
+See [Android Text Scale Manual Testing](docs/android-text-scale-manual-testing.md) for
+the device setup and the scenarios: the first read, a change while the app runs,
+rotation, and the WebView text zoom.
+
 ### Example app
 
 The [example app](examples/tauri-app/README.md) shows the current scale and lists each
