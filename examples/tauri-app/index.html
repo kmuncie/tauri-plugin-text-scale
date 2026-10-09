@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tauri Plugin Text Scale Example</title>
+      <script type="module" src="/src/main.ts"></script>
+   </head>
+   <body>
+      <main class="page">
+         <section class="panel">
+            <h1>Tauri Plugin Text Scale</h1>
+            <p>Change the operating system text size while this app runs.</p>
+            <dl class="status-grid">
+               <div>
+                  <dt>Current scale</dt>
+                  <dd id="scale">Loading...</dd>
+               </div>
+            </dl>
+            <p id="sample" class="sample">This line is 16px times the current scale.</p>
+            <p id="listen-error" class="error" hidden></p>
+            <p id="read-error" class="error" hidden></p>
+            <button id="refresh" type="button">Read again</button>
+            <h2>Changes</h2>
+            <ol id="changes" class="changes">
+               <li id="no-changes" class="muted">No changes yet</li>
+            </ol>
+         </section>
+      </main>
+   </body>
+</html>
